@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Style/request.css">
+    <link rel="stylesheet" href="/Style/universalStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title dir="rtl">جمبك | الطلبات</title>
+    <link rel="icon" type="image/x-icon" href="./Logo/logo.ico" dir="rtl">
+    <style>
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <h1 dir="rtl">جمبك</h1>
+            <img src="./Logo/logo.svg" alt="LOGO" />
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="crowdfunding"> حملات التمويل<i class="fas fa-coins"></i></a>
+    <a href="announcements"> الإعلانات<i class="fas fa-bullhorn"></i></a>
+    <a href="donation"> التبرعات<i class="fas fa-gift"></i></a>
+    <a href="request" class="active"> الطلبات<i class="fas fa-hand-holding-heart"></i></a>
+    <a href="account"> حسابي<i class="fas fa-user"></i></a>
+    <a href="index">الرئيسية <i class="fas fa-home"></i></a>
+</nav>
+
+<section>
+    <h2 class="section-title" dir="rtl">الطـلـبـات</h2>
+</section>
+
+<div class="main-container">
+    <div class="section-buttons">
+        <button class="section-btn" onclick="showSection('requestsList')">عرض الطلبات</button>
+        <button class="section-btn" onclick="showSection('requestForm')">تقديم طلب</button>
+    </div>
+
+    <div id="requestsList" class="container section">
+        <h2 class="form-title">طلبات المساعدة</h2>
+        <div class="requests-grid" id="requestsGrid">
+            <p id="notFound" style="display: none;">مافي طلبات حالياّ...</p>
+        </div>
+    </div>
+
+    <div id="requestForm" class="container section">
+        <h2 class="form-title">اطلب المساعدة</h2>
+        <form id="helpRequestForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="helpCategory">نوع (فئة) الطلب:</label>
+                <select id="helpCategory" name="helpCategory" required>
+                    <option value="">اختار فئة</option>
+                    <option value="سكن">سكن</option>
+                    <option value="مواد تموينية">مواد تموينية</option>
+                    <option value="ملابس">ملابس</option>
+                    <option value="علاج">علاج</option>
+                    <option value="وظيفة">وظيفة</option>
+                    <option value="اّخر">اّخر</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="helpDescription">تفاصيل الطلب:</label>
+                <textarea id="helpDescription" name="helpDescription" rows="4"
+                          placeholder="وصف بالتحديد الحاجة المطلوبة" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="requesterContact">معلومات التواصل:</label>
+                <input type="text" id="requesterContact" name="requesterContact"
+                       placeholder="مثلاً: واتساب: 0967587669" value="{{ user.phoneNumber }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="helpLocation">الموقع:</label>
+                <input type="text" id="helpLocation" name="helpLocation"
+                       placeholder="مثلاً: امدرمان حي العرضة" value="{{ user.location }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="urgencyLevel">الاستعجال:</label>
+                <select id="urgencyLevel" name="urgencyLevel" required>
+                    <option value="ما مستعجل">ما مستعجل</option>
+                    <option value="شبه مستعجل">شبه مستعجل</option>
+                    <option value="مستعجل">مستعجل</option>
+                    <option value="مستعجل جدا">مستعجل جداً</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="file-area">
+                <label for="supportingDocument">ملف دعم الطلب: (صورة ايصال, روشتة, إلخ...)</label>
+                <div class="file-upload-container">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <div class="file-upload-text">اضغط هنا لرفع الملف أو اسحب واسقط الملف</div>
+                    <input type="file" id="supportingDocument" name="supportingDocument" accept="image/*" data-raod="file">
+                </div>
+                <div class="file-preview"></div>
+            </div>
+
+            <button type="submit">تقديم الطلب</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+
+
+        <div class="footer-section">
+            <h4 dir="rtl">اتواصل معانا</h4>
+            <a dir="rtl" href="mailto:jmbk@gmail.com">jmbk@gmail.com</a>
+            <p>+249967587669</p>
+        </div>
+
+        <div class="footer-section">
+            <h4 dir="rtl">الصفحات</h4>
+            <a dir="rtl" href="./donation">التبرعات</a>
+            <a dir="rtl" href="./request">الطلبات</a>
+            <a dir="rtl" href="./announcements">الإعلانات</a>
+            <a dir="rtl" href="./crowdfunding">الحملات التمويلية</a>
+        </div>
+
+        <div class="footer-section">
+            <h4 dir="rtl">نحنا منو؟</h4>
+            <p dir="rtl">"جمبك" خدمة اتعملت عشان توصل المتبرعين بالناس المحتاجة, وعشان نساعد اي زول يوصل للحاجة الهو عايزها.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p dir="rtl">&copy; ٢٠٢٤ جمبك. جميع الحقوق محفوظة</p>
+    </div>
+</footer>
+
+<script src="./js/request.js"></script>
+<script src="./js/uploadFile.js"></script>
+
+</body>
+</html>

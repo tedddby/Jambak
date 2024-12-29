@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Style/start_funding.css">
+    <link rel="stylesheet" href="/Style/universalStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title dir="rtl">جمبك | الحملات اعمل حملة</title>
+    <link rel="icon" type="image/x-icon" href="./Logo/logo.ico" dir="rtl">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <h1 dir="rtl">جمبك</h1>
+            <img src="./Logo/logo.svg" alt="LOGO" />
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="crowdfunding" class="active"> حملات التمويل<i class="fas fa-coins"></i></a>
+    <a href="announcements"> الإعلانات<i class="fas fa-bullhorn"></i></a>
+    <a href="donation"> التبرعات<i class="fas fa-gift"></i></a>
+    <a href="request"> الطلبات<i class="fas fa-hand-holding-heart"></i></a>
+    <a href="account"> حسابي<i class="fas fa-user"></i></a>
+    <a href="index">الرئيسية <i class="fas fa-home"></i></a>
+</nav>
+
+<div class="container-startfunding">
+    <h2 class="form-title">اعمل حملة تمويلية</h2>
+    <form id="funding-form">
+        <label for="campaign-title">اسم الحملة</label>
+        <input type="text" id="campaign-title" name="campaign_title" placeholder="اكتب اسم الحملة" value="حملة {{user.name}} التمويلية" required>
+
+        <label for="category">سبب الحملة:</label>
+        <select id="category" name="category" required>
+            <option value="">اختار فئة</option>
+            <option value="health">الصحة</option>
+            <option value="education">التعليم</option>
+            <option value="community">المجتمع</option>
+            <option value="environment">البيئة</option>
+            <option value="others">اخر</option>
+        </select>
+
+        <label for="description">وصف الحملة:</label>
+        <textarea id="description" name="description" rows="5" placeholder="اتكلم اكتر عن الحملة" required></textarea>
+
+        <label for="goal-amount">المبلغ المستهدف:</label>
+        <input type="number" id="goal-amount" name="goal_amount" placeholder="اكتب المبلغ المستهدف مثلاً: 1500" min="1" required>
+
+        <label for="payment-info">رقم حساب بنكك:</label>
+        <input type="number" id="payment-info" name="payment_info" placeholder="مثلاً: 7777777" value="{{ user.mBOK }}" required>
+
+        <label for="contact-info">رقم الواتساب:</label>
+        <input type="text" id="contact-info" name="contact_info" placeholder="مثلاً: 249967587669" value="{{user.phoneNumber}}" required>
+
+        <label for="location">الموقع:</label>
+        <input type="text" id="location" name="location" placeholder="مثلاً: امدرمان حي العرضة" value="{{user.location}}" required>
+
+        <div class="form-group" id="file-area">
+            <label for="supportingDocument">ملف دعم الحملة: (صورة ايصال, روشتة, إلخ...)</label>
+            <div class="file-upload-container">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <div class="file-upload-text">اضغط هنا لرفع الملف أو اسحب واسقط الملف</div>
+                <input type="file" id="campaign-image" name="supportingDocument" accept="image/*" data-raod="file">
+            </div>
+            <div class="file-preview"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="align-self: center">اعمل الحملة</button>
+    </form>
+</div>
+
+<footer>
+    <div class="footer-content">
+
+
+        <div class="footer-section">
+            <h4 dir="rtl">اتواصل معانا</h4>
+            <a dir="rtl" href="mailto:jmbk@gmail.com">jmbk@gmail.com</a>
+            <p>+249967587669</p>
+        </div>
+
+        <div class="footer-section">
+            <h4 dir="rtl">الصفحات</h4>
+            <a dir="rtl" href="./donation">التبرعات</a>
+            <a dir="rtl" href="./request">الطلبات</a>
+            <a dir="rtl" href="./announcements">الإعلانات</a>
+            <a dir="rtl" href="./crowdfunding">الحملات التمويلية</a>
+        </div>
+
+        <div class="footer-section">
+            <h4 dir="rtl">نحنا منو؟</h4>
+            <p dir="rtl">"جمبك" خدمة اتعملت عشان توصل المتبرعين بالناس المحتاجة, وعشان نساعد اي زول يوصل للحاجة الهو عايزها.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p dir="rtl">&copy; ٢٠٢٤ جمبك. جميع الحقوق محفوظة</p>
+    </div>
+</footer>
+
+<script src="./js/start_funding.js"></script>
+<script src="./js/uploadFile.js"></script>
+
+</body>
+</html>

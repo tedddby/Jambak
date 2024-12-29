@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Style/universalStyle.css">
+    <link rel="stylesheet" href="/Style/donate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title dir="rtl">جمبك | اتبرع</title>
+    <link rel="icon" type="image/x-icon" href="./Logo/logo.ico" dir="rtl">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <h1 dir="rtl">جمبك</h1>
+            <img src="./Logo/logo.svg" alt="LOGO" />
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="crowdfunding"> حملات التمويل<i class="fas fa-coins"></i></a>
+    <a href="announcements"> الإعلانات<i class="fas fa-bullhorn"></i></a>
+    <a href="donation" class="active"> التبرعات<i class="fas fa-gift"></i></a>
+    <a href="request"> الطلبات<i class="fas fa-hand-holding-heart"></i></a>
+    <a href="account"> حسابي<i class="fas fa-user"></i></a>
+    <a href="index">الرئيسية <i class="fas fa-home"></i></a>
+</nav>
+
+<div class="main-container">
+    <h2 class="form-title">اتبرع</h2>
+    <form id="donate-form" onsubmit="javascript:void(0)">
+        <div class="form-group">
+            <label for="itemName">اسم الحاجة المتبرع بيها:</label>
+            <input type="text" id="itemName" name="itemName" placeholder="مثلاً: شوال سكر" required>
+        </div>
+
+        <div class="form-group">
+            <label for="itemCategory">الفئة:</label>
+            <select id="itemCategory" name="itemCategory" required>
+                <option value="">اختار الفئة</option>
+                <option value="Housing">سكن</option>
+                <option value="Food">مواد تموينية</option>
+                <option value="Clothing">ملابس</option>
+                <option value="Medicine">علاج\دواء</option>
+                <option value="Jobs">وظيفة</option>
+                <option value="Others">اخر</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="itemDescription">وصف للحاجة المتبرع بيها:</label>
+            <textarea id="itemDescription" name="itemDescription" rows="4" placeholder="وصف تفصيلي للحاجة المتبرع بيها" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="donorContact">كيف الناس تصل ليك:</label>
+            <input type="text" id="donorContact" name="donorContact" placeholder="اكتب رقم التلفون" value="{{ user.phoneNumber }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="itemLocation">الموقع:</label>
+            <input type="text" id="itemLocation" name="itemLocation" placeholder="اكتب الموقع" value="{{ user.location }}" required>
+        </div>
+
+        <div class="form-group" id="file-area">
+            <label for="supportingDocument">ارفق صورة للمُتَبَرعات:</label>
+            <div class="file-upload-container">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <div class="file-upload-text">اضغط هنا لرفع الملف أو اسحب واسقط الملف</div>
+                <input type="file" id="itemImage" name="supportingDocument" accept="image/*" data-raod="file">
+            </div>
+            <div class="file-preview"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">تبرُع</button>
+    </form>
+</div>
+
+<script src="./js/donate.js"></script>
+<script src="./js/uploadFile.js"></script>
+<footer>
+    <div class="footer-content">
+
+
+        <div class="footer-section">
+            <h4 dir="rtl">اتواصل معانا</h4>
+            <a dir="rtl" href="mailto:jmbk@gmail.com">jmbk@gmail.com</a>
+            <p>+249967587669</p>
+        </div>
+
+        <div class="footer-section">
+            <h4 dir="rtl">الصفحات</h4>
+            <a dir="rtl" href="./donation">التبرعات</a>
+            <a dir="rtl" href="./request">الطلبات</a>
+            <a dir="rtl" href="./announcements">الإعلانات</a>
+            <a dir="rtl" href="./crowdfunding">الحملات التمويلية</a>
+        </div>
+
+        <div class="footer-section">
+            <h4 dir="rtl">نحنا منو؟</h4>
+            <p dir="rtl">"جمبك" خدمة اتعملت عشان توصل المتبرعين بالناس المحتاجة, وعشان نساعد اي زول يوصل للحاجة الهو عايزها.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p dir="rtl">&copy; ٢٠٢٤ جمبك. جميع الحقوق محفوظة</p>
+    </div>
+</footer>
+
+</body>
+</html>

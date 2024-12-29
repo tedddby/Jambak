@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Style/announcements.css">
+    <link rel="stylesheet" href="/Style/universalStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title dir="rtl">جمبك | الإعلانات</title>
+    <link rel="icon" type="image/x-icon" href="./Logo/logo.ico" dir="rtl">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <h1 dir="rtl">جمبك</h1>
+            <img src="./Logo/logo.svg" alt="LOGO" />
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="crowdfunding"> حملات التمويل<i class="fas fa-coins"></i></a>
+    <a href="announcements" class="active"> الإعلانات<i class="fas fa-bullhorn"></i></a>
+    <a href="donation"> التبرعات<i class="fas fa-gift"></i></a>
+    <a href="request"> الطلبات<i class="fas fa-hand-holding-heart"></i></a>
+    <a href="account"> حسابي<i class="fas fa-user"></i></a>
+    <a href="index">الرئيسية <i class="fas fa-home"></i></a>
+</nav>
+
+<section>
+    <h2 class="section-title" dir="rtl">الإعلانـات <i><small style="display: block; text-align: center; font-size: small" dir="rtl">من إدارة الموقع</small></i></h2>
+</section>
+
+<div class="container-announcements">
+    <div class="announcement-cards" id="announcementsContainer">
+    </div>
+</div>
+
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <div class="popup-header">
+            <h2 id="popupTitle"></h2>
+        </div>
+        <div id="popupContent" dir="rtl"></div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+
+
+        <div class="footer-section">
+            <h4 dir="rtl">اتواصل معانا</h4>
+            <a dir="rtl" href="mailto:jmbk@gmail.com">jmbk@gmail.com</a>
+            <p>+249967587669</p>
+        </div>
+
+        <div class="footer-section">
+            <h4 dir="rtl">الصفحات</h4>
+            <a dir="rtl" href="./donation">التبرعات</a>
+            <a dir="rtl" href="./request">الطلبات</a>
+            <a dir="rtl" href="./announcements">الإعلانات</a>
+            <a dir="rtl" href="./crowdfunding">الحملات التمويلية</a>
+        </div>
+
+        <div class="footer-section">
+            <h4 dir="rtl">نحنا منو؟</h4>
+            <p dir="rtl">"جمبك" خدمة اتعملت عشان توصل المتبرعين بالناس المحتاجة, وعشان نساعد اي زول يوصل للحاجة الهو عايزها.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p dir="rtl">&copy; ٢٠٢٤ جمبك. جميع الحقوق محفوظة</p>
+    </div>
+</footer>
+
+<script src="./js/announcements.js"></script>
+
+</body>
+</html>

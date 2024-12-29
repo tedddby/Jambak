@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Style/request.css">
+    <link rel="stylesheet" href="/Style/universalStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title dir="rtl">جمبك | حسابي</title>
+    <link rel="icon" type="image/x-icon" href="./Logo/logo.ico" dir="rtl">
+    <style>
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <h1 dir="rtl">جمبك</h1>
+            <img src="./Logo/logo.svg" alt="LOGO" />
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="crowdfunding"> حملات التمويل<i class="fas fa-coins"></i></a>
+    <a href="announcements"> الإعلانات<i class="fas fa-bullhorn"></i></a>
+    <a href="donation"> التبرعات<i class="fas fa-gift"></i></a>
+    <a href="request"> الطلبات<i class="fas fa-hand-holding-heart"></i></a>
+    <a href="account" class="active"> حسابي<i class="fas fa-user"></i></a>
+    <a href="index">الرئيسية <i class="fas fa-home"></i></a>
+</nav>
+
+<section>
+    <h2 class="section-title" dir="rtl">حـسـابـي</h2>
+</section>
+
+<div class="main-container">
+    <div class="section-buttons">
+        <button class="section-btn" onclick="showSection('login')">تسجيل دخول</button>
+        <button class="section-btn" onclick="showSection('register')">حساب جديد</button>
+    </div>
+
+    <div id="login" class="container section">
+        <h2 class="form-title">تسجيل دخول</h2>
+        <form id="loginForm" onsubmit="handleSubmit(`login`, event)">
+            <div class="form-group">
+                <label for="requesterContact">رقم الهاتف:</label>
+                <input type="text" id="phoneNumber" name="requesterContact"
+                       placeholder="مثلاً: 0967587669" required>
+            </div>
+
+            <div class="form-group">
+                <label for="helpLocation">كلمة المرور:</label>
+                <input type="password" id="password" name="helpLocation"
+                       placeholder="اكتب كلمة المرور" required>
+            </div>
+            <button type="submit">تسجيل دخول</button>
+        </form>
+    </div>
+
+    <div id="register" class="container section">
+        <h2 class="form-title">حساب جديد</h2>
+        <form id="registerForm" onsubmit="handleSubmit(`register`, event)">
+            <div class="form-group">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name"
+                       placeholder="مثلاً: احمد محمد" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">رقم التلفون:</label>
+                <input type="text" id="phoneNumberreg" name="phoneNumber"
+                       placeholder="مثلاً: 0967587669" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mBOK">رقم حساب بنكك:</label>
+                <input type="text" id="mBOK" name="mBOK"
+                       placeholder="مثلاً: 777777" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">الموقع:</label>
+                <input type="text" id="location" name="location"
+                       placeholder="مثلاً: امدرمان حي العرضة" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">كلمة المرور:</label>
+                <input type="password" id="passwordreg" name="password"
+                       placeholder="اكتب كلمة المرور" required>
+            </div>
+            <button type="submit">تسجيل</button>
+        </form>
+    </div>
+
+    <div id="details" class="container section" data-loaded="{{user.id}}" style="width: 100%;">
+        <h2 class="form-title">معلومات الحساب</h2>
+        <form id="registerForm" onsubmit="handleSubmit(`logout`, event)">
+            <div class="form-group">
+                <label for="name">الاسم: {{user.name}}</label>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">رقم التلفون: {{user.phoneNumber}}</label>
+            </div>
+
+            <div class="form-group">
+                <label for="mBOK">رقم حساب بنكك: {{user.mBOK}}</label>
+            </div>
+
+            <div class="form-group">
+                <label for="location">الموقع: {{user.location}}</label>
+            </div>
+            <button type="submit" style="background-color: red">تسجيل خروج</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+
+
+        <div class="footer-section">
+            <h4 dir="rtl">اتواصل معانا</h4>
+            <a dir="rtl" href="mailto:jmbk@gmail.com">jmbk@gmail.com</a>
+            <p>+249967587669</p>
+        </div>
+
+        <div class="footer-section">
+            <h4 dir="rtl">الصفحات</h4>
+            <a dir="rtl" href="./donation">التبرعات</a>
+            <a dir="rtl" href="./request">الطلبات</a>
+            <a dir="rtl" href="./announcements">الإعلانات</a>
+            <a dir="rtl" href="./crowdfunding">الحملات التمويلية</a>
+        </div>
+
+        <div class="footer-section">
+            <h4 dir="rtl">نحنا منو؟</h4>
+            <p dir="rtl">"جمبك" خدمة اتعملت عشان توصل المتبرعين بالناس المحتاجة, وعشان نساعد اي زول يوصل للحاجة الهو عايزها.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p dir="rtl">&copy; ٢٠٢٤ جمبك. جميع الحقوق محفوظة</p>
+    </div>
+</footer>
+
+<script src="./js/account.js"></script>
+
+</body>
+</html>
